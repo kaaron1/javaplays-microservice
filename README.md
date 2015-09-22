@@ -1,6 +1,4 @@
-# javaplays-microservice
-
-# How to get this running?
+# javaplays-microservice - How to get this running?
 
 ## Create a Bluemix MQLight service as named in manifest.yml of this project
     cf cs MQLight standard <name of the service>
