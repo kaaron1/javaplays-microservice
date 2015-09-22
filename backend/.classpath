@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="target/classes" path="src/main/java">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry exported="true" kind="lib" path="/Users/bvellanki/install/all-eclipse-jars/stateless4j-2.5.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/bvellanki/install/all-eclipse-jars/slf4j-api-1.7.5.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/bvellanki/install/all-eclipse-jars/netty-all-4.0.21.Final.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/bvellanki/install/all-eclipse-jars/mqlight-api-1.0.2015060300.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/bvellanki/install/all-eclipse-jars/gson-2.3.1.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/bvellanki/install/all-eclipse-jars/AlchemyAPI.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

@@ -1,0 +1,63 @@
+<project name="alchemy-mqlight-backend" basedir="." default="main">
+
+	<property name="projectName" location="." />
+	<property name="src.dir"     value="src/main/java"/>
+	<property name="build.dir"   value="build"/>
+	<property name="classes.dir" value="${build.dir}/classes"/>
+	<property name="jar.dir"     value="${build.dir}/jar"/>
+	<property name="lib.dir"     value="lib"/>
+	<property name="jar.file"      value="${jar.dir}/AlchemyMQLightBackendWorker.jar"/>
+	<property name="manifest.file" value="${jar.dir}/MANIFEST.MF"/>
+
+	<property name="main-class"  value="com.ibm.ecodcnc.mqlight.AlchemyMQLightBackendWorker"/>
+	
+
+	<path id="external.jars">
+	        <fileset dir="${lib.dir}" includes="**/*.jar"/>
+	    </path>
+
+	    <path id="project.classpath">
+	        <pathelement location="${src.dir}"/>
+	        <path refid="external.jars" />
+	    </path>
+	
+	<target name="init">
+	        <mkdir dir="${build.dir}"/>
+	        <mkdir dir="${classes.dir}"/>
+	        <mkdir dir="${jar.dir}"/>
+	        <copy includeemptydirs="false" todir="${build.dir}">
+	            <fileset dir="${src.dir}">
+	                <exclude name="**/*.launch"/>
+	                <exclude name="**/*.java"/>
+	            </fileset>
+	        </copy>
+	    </target>
+
+	<target name="compile" depends="init">
+		 <echo message="In Compile"/>
+		<javac srcdir="${src.dir}" destdir="${classes.dir}" classpathref= "project.classpath" includeantruntime="false"/>
+	</target>
+	
+	<target name="clean">
+		 <echo message="In Clean"/>
+		<delete dir="${build.dir}"/>
+		
+	</target>
+	
+	
+	<target name="jar" depends="compile">
+		<mkdir dir="${jar.dir}"/>
+		<manifest file="${manifest.file}" >
+		            <attribute name="built-by" value="ecodcnc" />
+		            <attribute name="Main-Class" value="${main-class}" />
+		        </manifest>
+		<jar destfile="${jar.file}" 
+			    basedir="${build.dir}" 
+			    manifest="${manifest.file}">
+			    <fileset dir="${classes.dir}" includes="**/*.class" />
+				<zipgroupfileset dir="${lib.dir}" includes="**/*.jar" />
+			</jar>
+	</target>
+
+	<target name="main" depends="clean,jar"/>
+</project>

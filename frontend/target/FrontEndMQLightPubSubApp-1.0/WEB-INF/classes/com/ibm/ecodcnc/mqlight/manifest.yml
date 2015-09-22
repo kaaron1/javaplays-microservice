@@ -1,0 +1,14 @@
+applications:
+- name: ecodcnc-cert-mqlight-backend
+  memory: 128M
+  host: ecodcnc-cert-backend-${random-word}
+  command: node app.js
+  no-route: true
+  services:
+  - ecodcnc-cert-mqlightservice  
+- name: ecodcnc-cert-mqlight-frontend
+  memory: 128M
+  host: ecodcnc-cert-frontend-${random-word}
+  command: node app.js
+  services:
+  - ecodcnc-cert-mqlightservice 
