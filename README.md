@@ -1,9 +1,11 @@
-# javaplays-microservice - How to get this running?
+# javaplays-microservice 
 
-## Create a Bluemix MQLight service as named in manifest.yml of this project
+## How to get this running?
+
+### Create a Bluemix MQLight service as named in manifest.yml of this project
     cf cs MQLight standard <name of the service>
 
-## Download the Project Zip, Extract the zip, change the names of the application and services
+### Download the Project Zip, Extract the zip, change the names of the application and services
     ---
     applications:
     - name: microservice-alchemybackend
@@ -21,7 +23,7 @@
       path: frontEnd/FrontEndMQLightPubSubApp-1.0.war
       services:
       - ecodcnc-microservice
-## Push the app to Bluemix
+### Push the app to Bluemix
     cf push
 
 ### SAMPLE APPLICATION URL
