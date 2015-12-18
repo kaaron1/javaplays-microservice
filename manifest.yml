@@ -4,14 +4,14 @@ applications:
   memory: 256M
   instances: 2
   no-route: true
-  path: javaplays-microservice-alchemy-backend/AlchemyMQLightBackendWorker.jar
+  path: backend/AlchemyMQLightBackendWorker.jar
   buildpack: https://github.com/cloudfoundry/java-buildpack
   services:
   - ecodcnc-mqlightservice
 - name: ecodcnc-microservice-alchemyfrontend
   memory: 256M
   instances: 1
-  host: javaplays-mqlightfrontend-${random-word}
-  path: javaplays-microservice-alchemy-frontEnd/FrontEndMQLightPubSubApp-1.0.war
+  host: jp-sample-mqlightfrontend
+  path: frontEnd/target/FrontEndMQLightPubSubApp-1.0.war
   services:
   - ecodcnc-mqlightservice
