@@ -1,4 +1,8 @@
 ---
+declared-services:
+  ecodcnc-mqlightservice:
+    label: mqlight
+    plan: standard
 applications:
 - name: ecodcnc-microservice-alchemybackend
   memory: 256M
